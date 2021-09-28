@@ -3,26 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { AdminComponent } from './admin/admin.component';
-=======
+
 import { HomeComponent } from './home/home.component';
->>>>>>> ed2b71389bdacb9fb72a63f498910f205776e164
+import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
+import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    AdminComponent
-=======
-    HomeComponent
->>>>>>> ed2b71389bdacb9fb72a63f498910f205776e164
+
+    AdminComponent,
+
+    HomeComponent,
+      FarmerloginComponent,
+      BidderloginComponent,
+      AdminloginComponent,
+      ForgetpasswordComponent,
+      
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
