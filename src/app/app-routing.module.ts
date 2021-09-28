@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 import { BidderDetailsComponent } from './bidder-details/bidder-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FarmerDetailsComponent } from './farmer-details/farmer-details.component';
@@ -37,6 +38,21 @@ const routes: Routes = [
     component: DashboardComponent
   }
 
+=======
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
+import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { HomeComponent } from './home/home.component';
+
+const routes: Routes = [
+  {path:'',component:HomeComponent},
+  {path:'Home', component:HomeComponent},
+  {path:'AdminLogin',component:AdminloginComponent},
+  {path:'FarmerLogin',component:FarmerloginComponent},
+  {path:'BidderLogin',component:BidderloginComponent},
+  {path:'ForgetPassword',component:ForgetpasswordComponent}
+>>>>>>> e11e9cf5b909f6e7f66edc32feffc255f15358ed
 ];
 
 @NgModule({
