@@ -5,11 +5,11 @@ import { FarmerserviceService } from '../farmerservice.service';
 import { User } from '../model/user';
 
 @Component({
-  selector: 'app-forgetpassword',
-  templateUrl: './forgetpassword.component.html',
-  styleUrls: ['./forgetpassword.component.css']
+  selector: 'app-forgetpassword1',
+  templateUrl: './forgetpassword1.component.html',
+  styleUrls: ['./forgetpassword1.component.css']
 })
-export class ForgetpasswordComponent implements OnInit {
+export class Forgetpassword1Component implements OnInit {
   UserDoesNotExist=false;
   
   ISLoading:boolean=false;

@@ -4,6 +4,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { Forgetpassword1Component } from './forgetpassword1/forgetpassword1.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'AdminLogin',component:AdminloginComponent},
   {path:'FarmerLogin',component:FarmerloginComponent},
   {path:'BidderLogin',component:BidderloginComponent},
-  {path:'ForgetPassword',component:ForgetpasswordComponent}
+  {path:'ForgetPassword',component:ForgetpasswordComponent},
+  {path:'ForgetPassword1',component:Forgetpassword1Component}
 ];
 
 @NgModule({

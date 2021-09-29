@@ -11,6 +11,10 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { Resetpassword1Component } from './resetpassword1/resetpassword1.component';
+import { Forgetpassword1Component } from './forgetpassword1/forgetpassword1.component';
+import { FarmersloginComponent } from './farmerslogin/farmerslogin.component';
 
 
 @NgModule({
@@ -24,12 +28,19 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
       BidderloginComponent,
       AdminloginComponent,
       ForgetpasswordComponent,
+      ResetpasswordComponent,
+      Resetpassword1Component,
+      Forgetpassword1Component,
+      FarmersloginComponent,
+    
       
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
