@@ -15,11 +15,13 @@
   {
     min-width: fit-content;
     min-height: 10vh;
-    background: #0be881;
+    color: white;
+    background: #095e36;
     right:0;
     width: 100vw;
   }
   a{
+    color: black;
     text-decoration: none;
   }
   a  :visited{
@@ -35,7 +37,7 @@
   .sideNav
   {
     position: absolute;
-    background: #2ecc71;
+    background: #ace973;
     width:20vw;
     height: max-content;
     min-height: fit-content;
