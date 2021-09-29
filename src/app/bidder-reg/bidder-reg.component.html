@@ -7,7 +7,7 @@
           </div>
           
     <div class="main">
-    <form [formGroup]="BidderRegistrationForm" (ngSubmit)="Submitdata()" novalidate>
+    <form [formGroup]="BidderRegistrationForm" (ngSubmit)="register()" novalidate>
     <div class="login-box" style=" border-radius: 5%; box-shadow: black;">
         <img src="assets/bidder.jpg" width="135" height="135" style="display: block; margin-left: auto; margin-right: auto;">
         <h1 style="margin-left: 10px;">Bidder Registration</h1>
@@ -16,7 +16,7 @@
                 <div class="form-group col-10">
                     <tr>
                         <td><label><b>First Name</b></label></td>
-                        <td><input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Enter First Name"></td>
+                        <td><input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Enter First Name" [(ngModel)]=bidder.bidderFirstName></td>
                     </tr>
                         <div *ngIf="!BidderRegistrationForm.get('firstName')?.valid && BidderRegistrationForm.get('firstName')?.touched" 
                         class="alert alert-danger"> First Name is required</div>
@@ -28,7 +28,7 @@
                 <div class="form-group col-10">
                     <tr>
                         <td><label><b>Last Name</b></label></td>
-                        <td><input class="form-control" type="text" id="lasttName" formControlName="lastName" placeholder="Enter Last Name"></td>
+                        <td><input class="form-control" type="text" id="lasttName" formControlName="lastName" placeholder="Enter Last Name" [(ngModel)]=bidder.bidderLastName></td>
                     </tr>
                     <div *ngIf="!BidderRegistrationForm.get('lastName')?.valid && BidderRegistrationForm.get('lastName')?.touched" 
                     class="alert alert-danger"> Last Name is required</div>
@@ -40,7 +40,7 @@
                 <div class="form-group col-10">
                     <tr>
                         <td><label><b>Email</b></label></td>
-                        <td><input class="form-control" type="text" id="email" formControlName="email" placeholder="Enter Email ID"></td>
+                        <td><input class="form-control" type="text" id="email" formControlName="email" placeholder="Enter Email ID" [(ngModel)]=bidder.email></td>
                     </tr>
                         <div *ngIf="!BidderRegistrationForm.get('email')?.valid && BidderRegistrationForm.get('email')?.touched" 
                         class="alert alert-danger"> Email is required</div>
@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Password</b></label>
-                        <input class="form-control" type="password" id="password" formControlName="password" placeholder="Enter Password" appPassword>
+                        <input class="form-control" type="password" id="password" formControlName="password" placeholder="Enter Password" appPassword [(ngModel)]=bidder.password>
                         <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="form-group error col-8">
                             <div *ngIf="password!.errors!.required">
                               Password is required
@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Confirm Password</b></label>
-                        <input class="form-control" type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Re-enter Password">
+                        <input class="form-control" type="text" id="confirmPassword" formControlName="confirmPassword" placeholder="Re-enter Password">
                         <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="form-group error col-8">
                             <div *ngIf="password!.errors!.required">
                               Password is required
@@ -85,7 +85,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Address</b></label>
-                        <textarea class="form-control" rows="3" cols="40" type="text" id="address" formControlName="address" placeholder="Enter your Address"></textarea>
+                        <textarea class="form-control" rows="3" cols="40" type="text" id="address" formControlName="address" placeholder="Enter door number and street name" [(ngModel)]=bidder.address.street></textarea>
                         <div *ngIf="!BidderRegistrationForm.get('address')?.valid && BidderRegistrationForm.get('address')?.touched" 
                         class="alert alert-danger"> Address is required</div>
                 </div>
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>City</b></label>
-                        <input class="form-control" type="text" id="city" formControlName="city" placeholder="Enter your City">
+                        <input class="form-control" type="text" id="city" formControlName="city" placeholder="Enter your City" [(ngModel)]=bidder.address.city>
                         <div *ngIf="!BidderRegistrationForm.get('city')?.valid && BidderRegistrationForm.get('city')?.touched" 
                         class="alert alert-danger"> City is required</div>
                 </div>
@@ -104,7 +104,7 @@
     
             <div class="form-group col-md-4">
                 <label for="State"><b>State</b></label>
-                    <select class="form-control" id="state" placeholder="Select your State"  formControlName="state"> 
+                    <select class="form-control" id="state" placeholder="Select your State"  formControlName="state" [(ngModel)]=bidder.address.state> 
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -150,7 +150,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Pincode</b></label>
-                        <input class="form-control" type="text" id="pincode" formControlName="pincode" placeholder="Enter your Pincode">
+                        <input class="form-control" type="text" id="pincode" formControlName="pincode" placeholder="Enter your Pincode" [(ngModel)]=bidder.address.pincode>
                         <div *ngIf="!BidderRegistrationForm.get('pincode')?.valid && BidderRegistrationForm.get('pincode')?.touched" 
                         class="alert alert-danger"> Pincode is required</div>
                 </div>
@@ -160,9 +160,19 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Amount</b></label>
-                        <input class="form-control" type="text" id="amount" formControlName="amount" placeholder="Enter Amount">
+                        <input class="form-control" type="number" id="amount" formControlName="amount" placeholder="Enter Amount" [(ngModel)]=bidder.balance>
                         <div *ngIf="!BidderRegistrationForm.get('amount')?.valid && BidderRegistrationForm.get('amount')?.touched" 
                         class="alert alert-danger"> Amount is required</div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="form-group col-10">
+                    <label><b>Contact</b></label>
+                        <input class="form-control" type="number" id="contactNo" formControlName="contactNo" placeholder="Enter Contact" [(ngModel)]=bidder.contactNo>
+                        <div *ngIf="!BidderRegistrationForm.get('contactNo')?.valid && BidderRegistrationForm.get('contactNo')?.touched" 
+                        class="alert alert-danger"> Contact is required</div>
                 </div>
             </div>
             <br>
@@ -170,7 +180,7 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Trader License ID</b></label>
-                        <input class="form-control" type="text" id="traderLicense" formControlName="traderLicense" placeholder="Enter Trader License ID">
+                        <input class="form-control" type="number" id="traderLicense" formControlName="traderLicense" placeholder="Enter Trader License ID" [(ngModel)]=bidder.traderLicenseNo>
                         <div *ngIf="!BidderRegistrationForm.get('traderLicense')?.valid && BidderRegistrationForm.get('traderLicense')?.touched" 
                         class="alert alert-danger"> Trader License ID is required</div>
                 </div>
@@ -180,8 +190,8 @@
             <div class="row">
                 <div class="form-group col-10">
                     <label><b>Aadhar Card Number</b></label>
-                        <input class="form-control" type="text" id="aadharCard" formControlName="aadharCard" placeholder="Enter your Aadhar number">
-                        <div *ngIf="!BidderRegistrationForm.get('aadharCard')?.valid && BidderRegistrationForm.get('aadharCard')?.touched" 
+                        <input class="form-control" type="number" id="aadharCard" formControlName="aadharNo" placeholder="Enter your Aadhar number" [(ngModel)]=bidder.aadharNo>
+                        <div *ngIf="!BidderRegistrationForm.get('aadharNo')?.valid && BidderRegistrationForm.get('aadharNo')?.touched" 
                         class="alert alert-danger"> Aadhar Card Number is required</div>
                 </div>
             </div>

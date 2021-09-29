@@ -16,14 +16,13 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
-<<<<<<< HEAD
 import { ApplyInsuranceComponent } from './apply-insurance/apply-insurance.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
-=======
 import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
->>>>>>> 7aca57f19115ad6758b19ddcb59cbbf02e1099a7
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -37,14 +36,14 @@ import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
       BidderloginComponent,
       AdminloginComponent,
       ForgetpasswordComponent,
-<<<<<<< HEAD
+
       ApplyInsuranceComponent,
       ClaimInsuranceComponent,
       ViewInsuranceComponent,
-=======
+
       BidderRegComponent,
       FarmerRegComponent,
->>>>>>> 7aca57f19115ad6758b19ddcb59cbbf02e1099a7
+
       
   ],
   imports: [
@@ -52,6 +51,7 @@ import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule

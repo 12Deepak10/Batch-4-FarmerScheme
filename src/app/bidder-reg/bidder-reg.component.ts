@@ -1,5 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Bidder } from '../Bidder';
+import { BidderService } from "../bidder.service";
 
 @Component({
   selector: 'app-bidder-reg',
@@ -21,10 +24,10 @@ export class BidderRegComponent implements OnInit {
       pincode:new FormControl('',[Validators.required]),
       amount:new FormControl('',[Validators.required]),
       traderLicense:new FormControl('',[Validators.required]),
-      aadharCard:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{12}$")])
+      aadharNo:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{12}$")])
   });
-
-  constructor() { }
+  bidder=new Bidder();
+  constructor(private bidderService:BidderService,private router:Router) { }
 
   
 
@@ -74,12 +77,26 @@ export class BidderRegComponent implements OnInit {
   {
     return this.BidderRegistrationForm.get('traderLicense');
   }
-  get aadharCard()
+  get aadharNo()
   {
-    return this.BidderRegistrationForm.get('aadharCard');
+    return this.BidderRegistrationForm.get('aadharNo');
   }
   Submitdata()
   {
     console.log("Registration Successsful","Please login to continue")
+  }
+
+  register() {
+    //alert(JSON.stringify(this.customer));
+    this.bidderService.register(this.bidder).subscribe(data => {
+      //alert(JSON.stringify(data));
+      if(data.status == 'SUCCESS') {
+        this.router.navigate(['BidderLogin'])
+      }
+      else {
+        //missing code right now
+        alert(data.status);
+      }
+    })
   }
 }

@@ -17,15 +17,12 @@ const routes: Routes = [
   {path:'FarmerLogin',component:FarmerloginComponent},
   {path:'BidderLogin',component:BidderloginComponent},
   {path:'ForgetPassword',component:ForgetpasswordComponent},
-<<<<<<< HEAD
   {path:'ApplyInsurance',component:ApplyInsuranceComponent},
   {path:'ClaimInsurance',component:ClaimInsuranceComponent},
-  {path:'ViewInsurance',component:ViewInsuranceComponent}
-
-=======
+  {path:'ViewInsurance',component:ViewInsuranceComponent},
   {path:'FarmerRegistration',component:FarmerRegComponent},
   {path:'BidderRegistration',component:BidderRegComponent}
->>>>>>> 7aca57f19115ad6758b19ddcb59cbbf02e1099a7
+
 ];
 
 @NgModule({
