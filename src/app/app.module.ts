@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +16,9 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { ApplyInsuranceComponent } from './apply-insurance/apply-insurance.component';
+import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
 
 
 @NgModule({
@@ -24,13 +32,28 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
       BidderloginComponent,
       AdminloginComponent,
       ForgetpasswordComponent,
+      ApplyInsuranceComponent,
+      ClaimInsuranceComponent,
+      ViewInsuranceComponent,
       
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,    
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
+    
   ],
+  exports:[FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+   BrowserAnimationsModule
+  ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
