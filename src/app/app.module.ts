@@ -11,6 +11,8 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
+import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
       BidderloginComponent,
       AdminloginComponent,
       ForgetpasswordComponent,
+      BidderRegComponent,
+      FarmerRegComponent,
       
   ],
   imports: [
