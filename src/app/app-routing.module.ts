@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
+import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
 import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { HomeComponent } from './home/home.component';
@@ -15,10 +17,15 @@ const routes: Routes = [
   {path:'FarmerLogin',component:FarmerloginComponent},
   {path:'BidderLogin',component:BidderloginComponent},
   {path:'ForgetPassword',component:ForgetpasswordComponent},
+<<<<<<< HEAD
   {path:'ApplyInsurance',component:ApplyInsuranceComponent},
   {path:'ClaimInsurance',component:ClaimInsuranceComponent},
   {path:'ViewInsurance',component:ViewInsuranceComponent}
 
+=======
+  {path:'FarmerRegistration',component:FarmerRegComponent},
+  {path:'BidderRegistration',component:BidderRegComponent}
+>>>>>>> 7aca57f19115ad6758b19ddcb59cbbf02e1099a7
 ];
 
 @NgModule({
