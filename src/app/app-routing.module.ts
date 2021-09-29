@@ -18,16 +18,15 @@ const routes: Routes = [
   {path:'FarmerLogin',component:FarmerloginComponent},
   {path:'BidderLogin',component:BidderloginComponent},
   {path:'ForgetPassword',component:ForgetpasswordComponent},
-<<<<<<< HEAD
-  {path:'ForgetPassword1',component:Forgetpassword1Component}
-=======
+
+  {path:'ForgetPassword1',component:Forgetpassword1Component},
+
   {path:'ApplyInsurance',component:ApplyInsuranceComponent},
   {path:'ClaimInsurance',component:ClaimInsuranceComponent},
   {path:'ViewInsurance',component:ViewInsuranceComponent},
   {path:'FarmerRegistration',component:FarmerRegComponent},
   {path:'BidderRegistration',component:BidderRegComponent}
 
->>>>>>> 487655cfa3da8b4db55a47e94cfe3c5759f97db7
 ];
 
 @NgModule({

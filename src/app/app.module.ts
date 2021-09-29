@@ -16,12 +16,11 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
-<<<<<<< HEAD
+
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { Resetpassword1Component } from './resetpassword1/resetpassword1.component';
 import { Forgetpassword1Component } from './forgetpassword1/forgetpassword1.component';
 import { FarmersloginComponent } from './farmerslogin/farmerslogin.component';
-=======
 import { ApplyInsuranceComponent } from './apply-insurance/apply-insurance.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
@@ -29,7 +28,6 @@ import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
->>>>>>> 487655cfa3da8b4db55a47e94cfe3c5759f97db7
 
 
 @NgModule({
@@ -43,13 +41,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       BidderloginComponent,
       AdminloginComponent,
       ForgetpasswordComponent,
-<<<<<<< HEAD
+
       ResetpasswordComponent,
       Resetpassword1Component,
       Forgetpassword1Component,
       FarmersloginComponent,
     
-=======
 
       ApplyInsuranceComponent,
       ClaimInsuranceComponent,
@@ -58,17 +55,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       BidderRegComponent,
       FarmerRegComponent,
 
->>>>>>> 487655cfa3da8b4db55a47e94cfe3c5759f97db7
+
       
   ],
   imports: [
     BrowserModule,    
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
-    ReactiveFormsModule
 
-=======
+  
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
@@ -81,7 +76,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
    BrowserAnimationsModule
->>>>>>> 487655cfa3da8b4db55a47e94cfe3c5759f97db7
+
   ],
   
   providers: [],

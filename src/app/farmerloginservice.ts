@@ -8,12 +8,12 @@ import { LoginStatus } from './model/login-status';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class FarmerLoginService {
 
   constructor(private http: HttpClient) { }
 
   login(login: Login) : Observable<LoginStatus>  {
-    let url = 'http://localhost:8585/BidderLogin';
+    let url = 'http://localhost:8585/FarmerLogin';
     return this.http.post<LoginStatus>(url, login);
   }
 }

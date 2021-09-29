@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Bidder  } from "./Bidder";
 import { Observable } from 'rxjs';
-import { Status } from "./status";
+import { Status } from './model/status';
+
 @Injectable({
   providedIn: 'root'
 })
