@@ -8,7 +8,7 @@ import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
+
 
 import { HomeComponent } from './home/home.component';
 import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
@@ -27,6 +27,7 @@ import { ViewInsuranceComponent } from './view-insurance/view-insurance.componen
 import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 
 

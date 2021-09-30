@@ -14,7 +14,7 @@ export class BidderService {
   register(bidder:Bidder):Observable<Status>{
     console.log(bidder.aadharNo);
     
-    let url='http://localhost:9090/register';
+    let url='http://localhost:8585/register';
     return this.http.post<Status>(url,bidder);
   }
 
