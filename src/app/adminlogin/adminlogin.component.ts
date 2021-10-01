@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminlogin',
@@ -7,26 +8,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./adminlogin.component.css']
 })
 export class AdminloginComponent implements OnInit {
-  AdminLoginForm:FormGroup=new FormGroup({
-    emailid:new FormControl("",[Validators.required,Validators.pattern("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")]),
-    password:new FormControl("",[Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")])
-  });
+  
+    emailid:string;
+    password:string;
  
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-  get emailid()
-  {
-    return this.AdminLoginForm.get('emailid');
-  }
-  get password()
-  {
-    return this.AdminLoginForm.get('password');
-  }
-  Submitdata()
-  {
-    console.log("Hi")
+  checkLogin(){
+    console.log(this.emailid+" "+this.password);
+    if(this.emailid=="sudeepakmpt@gmail.com" && this.password=="deepak123"){
+      sessionStorage.setItem("email",this.emailid);
+      //localStorage.setItem("uname",this.username);
+      this.router.navigate(['/adminHome'])
+    }
+    else{
+      alert("Wrong Password")
+      this.router.navigate(['/adminLogin'])
+    }
+
   }
 
 }

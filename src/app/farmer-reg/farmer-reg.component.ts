@@ -12,23 +12,6 @@ import { FarmerService } from "../farmer.service";
 
 @Injectable()
 export class FarmerRegComponent implements OnInit {
-
-  FarmerRegistrationForm:FormGroup=new FormGroup({
-    firstName:new FormControl ('', [Validators.required]),
-    lastName:new FormControl ('', [Validators.required]),
-    email:new FormControl('',[Validators.required,Validators.email]),
-    password:new FormControl("",[Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]),
-    confirmPassword:new FormControl("",[Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]),
-    address:new FormControl('',[Validators.required]),
-    city:new FormControl('',[Validators.required]),
-    state:new FormControl('',[Validators.required]),
-    pincode:new FormControl('',[Validators.required]),
-    landArea:new FormControl('',[Validators.required]),
-    landLocation:new FormControl('',[Validators.required]),
-    aadharCard:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{12}$")])
-});
-
-
 farmer=new Farmer();
 constructor(private farmerService:FarmerService,private router:Router) { }
 

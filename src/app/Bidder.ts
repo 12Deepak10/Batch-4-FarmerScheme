@@ -1,5 +1,3 @@
-import { Address } from "./Address";
-
 
 export class Bidder{
     bidderId:number;
@@ -11,5 +9,5 @@ export class Bidder{
 	balance:number;
 	aadharNo:number;
 	traderLicenseNo:number;
-    address:Address;
+	
 }

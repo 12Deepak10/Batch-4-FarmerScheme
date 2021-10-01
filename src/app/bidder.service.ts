@@ -26,4 +26,9 @@ export class BidderService {
 //     let url='http://localhost:9090/profile?customerId='+customerId;
 //     return this.http.get<Customer>(url);
 //   }
+      getBidderList():Observable<any>
+      {
+        let url='http://localhost:9090/viewAllBidders';
+        return this.http.get(url);
+      }
 }

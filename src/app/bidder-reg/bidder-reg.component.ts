@@ -38,7 +38,7 @@ export class BidderRegComponent implements OnInit {
   register() {
     //alert(JSON.stringify(this.customer));
     this.bidderService.register(this.bidder).subscribe(data => {
-      //alert(JSON.stringify(data));
+      alert(JSON.stringify(data));
       if(data.status == 'SUCCESS') {
         this.router.navigate(['BidderLogin'])
       }

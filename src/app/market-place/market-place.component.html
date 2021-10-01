@@ -1,10 +1,13 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
 <div>
     <h1 style="margin-left: 400px;">MarketPlace</h1>
 </div>
 <span>
 
 </span>
-<div class="page-content page-container" id="page-content">
+<!-- <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
             <div class="col-lg-8 grid-margin stretch-card">
@@ -66,4 +69,28 @@
             </div>
         </div>
     </div>
+</div> -->
+<div >
+    <table class="main">
+            <thead >
+            <tr>
+                <th>Crop Name</th>
+                <!-- <th>Farmer Name</th> -->
+                <th>Crop Type</th>
+                <th>Fertilizer Type</th>
+                <th>Quantity</th>
+                <th>Current bidding amount </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of crops">
+                    <td>{{c.croptype}}</td>
+                    <!-- <td>{{c.farmer.farmerFirstName}}</td> -->
+                    <td>{{c.cropName}}</td>
+                    <td>{{c.fertilizertype}}</td>
+                    <td>{{c.quantity}}</td>
+                    <td>{{c.baseprice}}</td>
+                </tr>
+            </tbody>
+    </table>
 </div>

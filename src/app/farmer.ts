@@ -1,6 +1,3 @@
-
-
-
 export class Farmer{
     farmerId:number;
 	farmerFirstName: String;

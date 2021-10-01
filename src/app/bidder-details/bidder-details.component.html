@@ -1,10 +1,10 @@
 <div>
     <h1 style="margin-left: 400px;">Bidder Details</h1>
 </div>
-<span>
+<!-- <span>
 
-</span>
-<div class="page-content page-container" id="page-content">
+</span> -->
+<!-- <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
             <div class="col-lg-8 grid-margin stretch-card">
@@ -23,42 +23,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Deepak</td>
-                                        <td>S</td>
-                                        <td>deepak@hotmail.com</td>
-                                        <td>9123456780</td>
+                                    <tr *ngFor="let b of bidders">
+                                        <td>{{b.bidderId}}</td>
+                                        <td>{{b.bidderFirstName}}</td>
+                                        <td>{{b.bidderLastName}}</td>
+                                        <td>{{b.email}}</td>
+                                        <td>{{b.contactNo}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Divya</td>
-                                        <td>S</td>
-                                        <td>divya@gmail.com</td>
-                                        <td>9012345123</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Poojah</td>
-                                        <td>G</td>
-                                        <td>poojaj@hotmail.com</td>
-                                        <td>9098765432</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Kalki</td>
-                                        <td>Vikas Reddy</td>
-                                        <td>kvreddy@hotmail.com</td>
-                                        <td>9678967890</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Vaishavi</td>
-                                        <td>V</td>
-                                        <td>vaishavi@hotmail.com</td>
-                                        <td>9123412345</td>
-                                    </tr>
-                                </tbody>
+                                </tbody> 
                             </table>
                         </div>
                     </div>
@@ -66,4 +38,27 @@
             </div>
         </div>
     </div>
+</div> -->
+<div >
+    <table class="main">
+            <thead >
+            <tr>
+                <th>BidderId</th>
+                <th>Bidder First Name</th>
+                <th>Bidder Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bidder of bidders">
+                    <td>{{bidder.bidderId}}</td>
+                    <td>{{bidder.bidderFirstName}}</td>
+                    <td>{{bidder.bidderLastName}}</td>
+                    <td>{{bidder.email}}</td>
+                    <td>{{bidder.contactNo}}</td>
+                </tr>
+            </tbody>
+    </table>
 </div>
+
