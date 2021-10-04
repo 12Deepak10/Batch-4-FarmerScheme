@@ -23,7 +23,7 @@ export class BidderloginComponent implements OnInit {
     //console.log("Hi")
     alert(JSON.stringify(this.login));
     this.loginService.login(this.login).subscribe(data => {
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
       if(data != null) {
         let bidderId = data.bidderId;
         sessionStorage.setItem('bidderId',String(bidderId));
@@ -38,7 +38,7 @@ export class BidderloginComponent implements OnInit {
 
       }
       else {
-        this.message="Wrong login";
+        alert("Wrong Login!");
       }
     })
 

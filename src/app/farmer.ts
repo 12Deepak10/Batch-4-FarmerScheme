@@ -7,5 +7,5 @@ export class Farmer{
 	contactNo:String ;
 	balance:number;
 	aadharNo:number;
-	landArea:String;
+	landDetails:String;
 }

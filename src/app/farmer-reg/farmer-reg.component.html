@@ -222,7 +222,7 @@
 
       </div>
 </div> -->
-
+<body>
 <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <img src="assets/websitelogo.jpg" width="70px" height="70px" style="float: left;">
@@ -230,7 +230,7 @@
     </div>
 </div>
 
-<div class="main">
+<div class="main" style="margin-top: 150px;">
 
 <form (ngSubmit)="register()">
     <div class="login-box" style=" border-radius: 5%; box-shadow: black;">
@@ -391,21 +391,24 @@
                         Aadhar Number must be 12 characters
             </div>
         </div> 
-
+        <div>
         <label for="t8">Land Area:</label>
       <input 
               type ="text" 
               name = "t8" 
-              [(ngModel)]=farmer.landArea
+              [(ngModel)]=farmer.landDetails
               required
               minlength="2"
               #la="ngModel"
        /><br><br>
-
-       <div *ngIf="la.errors?.required">
-                Enter your Land Area!
+       <div *ngIf = "la.invalid && (la.dirty || ano.touched)"
+            class = "alert">
+   
+            <div *ngIf="la.errors?.required">
+                        Enter your Aadhar number!
+            </div>     
         </div>
-
+    </div>
         <label for="t9">Balance:</label>
       <input 
               type ="number" 
@@ -431,3 +434,4 @@
       <button 
               type="submit"> Register
       </button>
+    </div>

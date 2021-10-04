@@ -18,7 +18,7 @@ export class FarmerloginComponent {
   Submitdata() {
     alert(JSON.stringify(this.login));
     this.farmerloginService.login(this.login).subscribe(data => {
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
       // if(data.status == 'SUCCESS') {
       //   let farmerId = data.farmerId;
       //   console.log()
@@ -40,7 +40,7 @@ export class FarmerloginComponent {
         this.router.navigate(['farmerHome']);
       }
       else{
-        this.message = "Wrong login";
+        alert("Wrong Login");
       }
       
     })
