@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FarmerService } from '../farmer.service';
+import { Insurance } from '../insurance';
 
 @Component({
   selector: 'app-apply-insurance',
@@ -8,34 +10,62 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export class ApplyInsuranceComponent implements OnInit {
 
-  ApplyInsuranceForm: FormGroup=new FormGroup({
-    applicantName:new FormControl("",[Validators.required,Validators.minLength(2)]),
-    cropName:new FormControl("",[Validators.required,Validators.minLength(2)]),
-    landArea:new FormControl("",[Validators.required]),
-    sumInsured:new FormControl("",[Validators.required])
-  });
-
-  get applicantName(){
-    return this.ApplyInsuranceForm.get('applicantName');
+  message: string;
+  insurance: Insurance = new Insurance();
+  id:Number;
+  amount:Number;
+  sum:any;
+  constructor(private farmerService: FarmerService, private router: Router) { }
+  calculation()
+  {
+    if(this.insurance.croptype == "Rabi")
+    {
+      this.sum=this.insurance.sumInsured;
+      this.amount = this.sum  * 0.2; 
+    }
+    else if(this.insurance.croptype == "Kharif")
+    {
+      this.sum=this.insurance.sumInsured;
+      this.amount = this.sum  * 0.15; 
+    }
+    else 
+    {
+      this.sum=this.insurance.sumInsured;
+      this.amount = this.sum  * 0.1; 
+    }
+    alert(this.amount+"- to be paid annually")
   }
-
-  get cropName(){
-    return this.ApplyInsuranceForm.get('cropName');
-  }
-
-  get landArea(){
-    return this.ApplyInsuranceForm.get('landArea');
-  }
-
-  get sumInsured(){
-    return this.ApplyInsuranceForm.get('sumInsured');
-  }
-
-  constructor() { }
-
   Submitdata()
   {
-    console.log("Hi")
+    // this.id = Number(sessionStorage.getItem("farmerId"));
+    // this.insurance.insuranceId = this.id;
+    // this.farmerService.applyInsurance(this.insurance).subscribe(data=>
+    //   {
+        
+    //     console.log(this.insurance.insuranceId);
+    //     if(data.status == 'SUCCESS'){
+    //       console.log(this.insurance.insuranceId);
+    //       //this.router.navigate(['farmerHome'])
+    //     }
+    //     else
+    //     {
+    //       alert(data.status);
+    //     }
+    //   })
+    this.id = Number(sessionStorage.getItem("farmerId"));
+    this.insurance.farmerId = this.id;
+    this.insurance.estimatedamount = this.amount;
+    //this.insurance.estimatedamount =
+    this.farmerService.applyInsurance(this.insurance).subscribe(data=>
+      {
+        console.log(this.insurance);
+        if(data.status == 'SUCCESS')
+        {
+          this.router.navigate(['farmerHome']);
+        }
+        else
+          alert(data.status);
+      }) 
   }
 
   ngOnInit(): void {

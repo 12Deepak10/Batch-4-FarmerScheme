@@ -2,65 +2,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <div>
-    <h1 style="margin-left: 400px;">Bidding History</h1>
+    <h1 style="margin-left: 480px;"> Bid History </h1>
 </div>
-<span>
-
-</span>
-<div class="page-content page-container" id="page-content">
-    <div class="padding">
-        <div class="row container d-flex justify-content-center">
-            <div class="col-lg-8 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title" style="text-align: center;">History</h4>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Crop Name</th>
-                                        <th>Quantity</th>
-                                        <th>Base Price</th>
-                                        <th>Final Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Rice</td>
-                                        <td>5</td>
-                                        <td>200</td>
-                                        <td>250</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wheat</td>
-                                        <td>10</td>
-                                        <td>400</td>
-                                        <td>500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sorgham</td>
-                                        <td>5</td>
-                                        <td>300</td>
-                                        <td>350</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cotton</td>
-                                        <td>10</td>
-                                        <td>300</td>
-                                        <td>350</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Barley</td>
-                                        <td>3</td>
-                                        <td>100</td>
-                                        <td>250</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<br>
+<div >
+    <table class="main">
+            <thead >
+            <tr>
+                <th> Crop Name </th>
+                <th> Crop Type </th>
+                <th> Farmer Name </th>
+                <th> Quantity </th>
+                <th> Amount </th>
+            </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let c of crops">
+                    <td>{{c.crop.cropName}}</td>
+                    <td>{{c.crop.croptype}}</td>
+                    <td>{{c.farmer.farmerFirstName}}</td>
+                    <td>{{c.crop.quantity}}</td>
+                    <td>{{c.bidprice}}</td>
+                </tr>
+            </tbody>
+    </table>
 </div>

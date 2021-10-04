@@ -1,68 +1,150 @@
-<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"></head>
 
-<body>
+<form (ngSubmit)="Submitdata()">
+    <div class="login-box" style=" border-radius: 5%; box-shadow: black;">
+        <img src="assets/farmer.jpg" width="135" height="135" style="display: block; margin-left: auto; margin-right: auto;">
+        <h1 style="margin-left: 10px;">Insurance Application</h1>
 
-    <form [formGroup]="ApplyInsuranceForm" (ngSubmit)="Submitdata()" novalidate>
-        <div class="insur-box" style=" border-radius: 5%; box-shadow: black;">
-            <h3 style="margin-left: 65px;"><b>Insurance Application</b></h3>
+        <label for="t1"> Insuree Name:</label>
+      <input  
+              type = "text" 
+              name = "t1" 
+              [(ngModel)] = insurance.insureeName
+              required
+              minlength="3"
+              #iname = "ngModel"          
+      /><br><br>
+      <div 
+              *ngIf = "iname.invalid && (iname.dirty || iname.touched)"
+              class = "alert">
+          
+          <div *ngIf="iname.errors?.required">
+                Insuree Name is Required!
+          </div>
+          
+          <div *ngIf = "iname.errors?.minlength">
+                Insuree Name must be atleast 3 characters long
+          </div>
 
-            <div class="form-group">
-                <label for="applicantName">Applicant Name</label>
-                <input type="text" class="form-control" formControlName="applicantName" id="applicantName" aria-describedby="applicantNameHelp"
-                    placeholder="Enter name">
-                <div *ngIf="!applicantName?.valid && (applicantName?.dirty || applicantName?.touched)"
-                    class="form-group error col-8">
-                    <div class="error" *ngIf="applicantName!.errors!.required">
-                        Name is required
-                    </div>
+      </div>
+
+      <label for="t2"> Area(in sqft):</label>
+      <input  
+              type = "number" 
+              name = "t2" 
+              [(ngModel)] = insurance.area
+              required
+              minlength="3"
+              #area = "ngModel"          
+      /><br><br>
+      <div 
+              *ngIf = "area.invalid && (area.dirty || area.touched)"
+              class = "alert">
+          
+          <div *ngIf="area.errors?.required">
+                Area is Required!
+          </div>
+      </div>
+
+      <label for="t3"> Crop Name:</label>
+      <input  
+              type = "text" 
+              name = "t3" 
+              [(ngModel)] = insurance.cropName
+              required
+              minlength="3"
+              #cname = "ngModel"          
+      /><br><br>
+      <div 
+              *ngIf = "cname.invalid && (cname.dirty || cname.touched)"
+              class = "alert">
+          
+          <div *ngIf="cname.errors?.required">
+                Crop Name is Required!
+          </div>
+      </div>
+
+      <label for="t4"> Crop Type:</label>
+      <select [(ngModel)]= insurance.croptype name="insurance" id="insuranceapproval">
+
+        <option value="Kharif">KHARIF</option>
+        <option value="Rabi">RABI</option>    
+        <option value="Horiculture">HORICULTURE</option>                                             
+    </select>
+    <br><br>
+
+      <label for="t5"> Sum Insured:</label>
+      <input  
+              type = "number" 
+              name = "t5" 
+              [(ngModel)] = insurance.sumInsured 
+              required
+              #quan = "ngModel"          
+      /><br><br>
+      <div 
+              *ngIf = "quan.invalid && (quan.dirty || quan.touched)"
+              class = "alert">
+          
+          <div *ngIf="quan.errors?.required">
+                Sum  is Required!
+          </div>
+
+      </div>
+
+      <div class="form-group form-check">
+        <button (click)="calculation()" class="btn btn-light btn-lg"
+            style=" height:30px; width: 250px;border-radius: 10%; margin-top: 10px; color: rgb(255, 254, 254); background-color: rgb(231, 19, 19);"
+            >Calculate Estimated Amount and Sumbit</button><br><br>
+    
+        <!-- <button type="submit" class="btn btn-light btn-lg"
+            style="  width: 100px;border-radius: 10%; margin-top: 10px; color: rgb(255, 254, 254); background-color: rgb(231, 19, 19);"
+            ><h5>Apply</h5></button><br /><br /> -->
+       
+    </div>
+
+    
+<!-- 
+                <p class="form-group col-10">
+                    <label for="ApplicantName">Applicant Name</label>
+                    <input type="text" placeholder="Enter your name" name="applicantName" />
+                </p>
+
+                <p class="form-group col-10">
+                    <label for="CropType"><h6>Crop Type</h6></label>
+                    <select name="cropType">
+                        <option value="kharif">Kharif</option>
+                        <option value="rabi">Rabi</option>
+                        <option value="horticularal">Horticularal</option>
+                    </select>
+                </p>
+
+                <p class="form-group col-10">
+                    <label for="cropName"><h6>Crop Name</h6></label>
+                    <input type="text" placeholder="Enter crop name" name="cropName" />
+                </p>
+
+                <p class="form-group col-10">
+                    <label for="landArea"><h6>Land Area</h6></label>
+                    <input type="text" placeholder="Enter the land area" name="landArea" />
+
+                </p>
+                <p class="form-group col-10">
+                    <label for="sumInsured"><h6>Sum Insured</h6></label>
+                    <input type="text" placeholder="Enter the amount" name="sumInsured" />
+
+                </p>
+                <div class="form-group form-check">
+                    <button type="submit" class="btn btn-light btn-lg"
+                        style=" height:30px; width: 250px;border-radius: 10%; margin-top: 10px; color: rgb(255, 254, 254); background-color: rgb(231, 19, 19);"
+                        >Calculate Estimated Amount</button><br><br>
+                        
+                            <button type="submit" class="btn btn-light btn-lg"
+                            style="  width: 100px;border-radius: 10%; margin-top: 10px; color: rgb(255, 254, 254); background-color: rgb(231, 19, 19);"
+                            ><h5>Apply</h5></button><br /><br />
+                   
                 </div>
             </div>
-            <div class="form-group">
-                <label for="cropType">Crop Type</label>
-                <select class="form-control" id="cropType" name="cropType">
-                    <option value="kharif">Kharif</option>
-                    <option value="rabi">Rabi</option>
-                    <option value="horticularal">Horticularal</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="cropName">Crop Name</label>
-                <input type="text" class="form-control" formControlName="cropName" id="cropName" aria-describedby="cropNameHelp"
-                    placeholder="Enter crop name">
-                <div *ngIf="!cropName?.valid && (cropName?.dirty || cropName?.touched)" class="form-group error col-8">
-                    <div class="error" *ngIf="cropName!.errors!.required">
-                        Crop name is required
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="landArea">Land Area</label>
-                <input type="number" class="form-control" formControlName="cropName" id="landArea" aria-describedby="landAreaHelp"
-                    placeholder="Enter land area">
-                <div *ngIf="!landArea?.valid && (landArea?.dirty || landArea?.touched)" class="form-group error col-8">
-                    <div class="error" *ngIf="landArea!.errors!.required">
-                        Land area is required
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="sumInsured">SumInsured</label>
-                <input type="number" class="form-control" formControlName="sumInsured" id="sumInsured" aria-describedby="sumInsuredHelp"
-                    placeholder="Enter the sum to be insured">
-                <div *ngIf="!sumInsured?.valid && (sumInsured?.dirty || sumInsured?.touched)" class="form-group error col-8">
-                    <div class="error" *ngIf="sumInsured!.errors!.required">
-                        Sum Insured is required
-                    </div>
-                </div>
-            </div>
-
-
-
-            
-            <button type="submit" class="btn btn-primary" style="border-radius: 10%; margin-top: 10px; color: rgb(255, 254, 254); background-color: rgb(231, 19, 19);"
-            [disabled]="!ApplyInsuranceForm.valid">Apply</button>
         </div>
-    </form>
-</body>
+        </form>
+    </div>
+</div>
+</body> -->

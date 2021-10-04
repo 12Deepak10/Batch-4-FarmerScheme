@@ -14,9 +14,6 @@ import { FarmerService } from "../farmer.service";
 export class FarmerRegComponent implements OnInit {
 farmer=new Farmer();
 constructor(private farmerService:FarmerService,private router:Router) { }
-
-
-
 ngOnInit(): void {
 }
 

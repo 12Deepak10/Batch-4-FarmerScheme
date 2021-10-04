@@ -1,38 +1,31 @@
 <body>
     
 
-<div class="container-fluid">
-    <div class="container">
-        <table class="table table-bordered table-dark">
-            <thead class="thead-dark">
+<div>
+    <table class="main">
+            <thead>
                 <tr>
-                    <th>Crop Type</th>
+                    <th>Insurance ID</th>
+                    <th>Insuree Name</th>
                     <th>Crop Name</th>
-                    <th>Land Area</th>
-                    <th>Sum Insured</th>
-                    <th>Application status</th>
-                    <th>Claim status</th>
-                    <th>Policy Id</th>
+                    <th>Crop Type</th>
+                    <th>Sum insured</th>
+                    <th>Estimated amount</th>
+                    <th>Approved Status</th>
                 </tr>
             </thead>
 
             <tbody >
-                <tr> 
-                    <td> Kharif</td>
-                    <td> Rice</td>
-                    <td> 1000</td>
-                    <td>50000000 </td>
-                    <td> Approved</td>
-                    <td> Not Claimed</td> 
-                    <td>Policy id</td>
-
-        
-        </tr>
+                <tr *ngFor = "let i of insurance"> 
+                    <td>{{i.insuranceId}}</td>
+                    <td>{{i.insureeName}}</td>
+                    <td>{{i.cropName}}</td>
+                    <td>{{i.croptype}}</td>
+                    <td>{{i.sumInsured}}</td>
+                    <td>{{i.estimatedamount}}</td>
+                    <td>{{i.approvedstatus}}</td>
+                </tr>
             </tbody>
-
-        </table>
-
-    </div>
-
+    </table>
 </div>
 </body>

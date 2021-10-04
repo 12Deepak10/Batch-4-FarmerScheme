@@ -12,6 +12,7 @@ import { BidderloginComponent } from './bidderlogin/bidderlogin.component';
 import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
 import { FarmerloginComponent } from './farmerlogin/farmerlogin.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { Forgetpassword1Component } from './forgetpassword1/forgetpassword1.component';
 import { HomeComponent } from './home/home.component';
 import { BiddingApprovalComponent } from './bidding-approval/bidding-approval.component';
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
@@ -39,14 +40,14 @@ const routes: Routes = [
     component:AdminComponent,
     children:
     [
-      {
-        path:'',
-        component: DashboardComponent
-      },
-      {
-        path:'dashBoardLink',
-        component: DashboardComponent
-      },
+      // {
+      //   path:'',
+      //   component: DashboardComponent
+      // },
+      // {
+      //   path:'dashBoardLink',
+      //   component: DashboardComponent
+      // },
       {
         path:'farmerLink',
         component:FarmerDetailsComponent
@@ -111,13 +112,17 @@ const routes: Routes = [
       {
         path:'insuranceDashboard',
         component:InsuranceDashboardComponent,
-        children:
-        [
-          {path:'ApplyInsurance',component:ApplyInsuranceComponent},
-          {path:'ClaimInsurance',component:ClaimInsuranceComponent},
-          {path:'ViewInsurance',component:ViewInsuranceComponent}
-        ]
-      }
+        // children:
+        // [
+        //   {path:'ApplyInsurance',component:ApplyInsuranceComponent},
+        //   {path:'ClaimInsurance',component:ClaimInsuranceComponent},
+        //   {path:'ViewInsurance',component:ViewInsuranceComponent}
+        // ]
+      },
+      {path:'ApplyInsurance',component:ApplyInsuranceComponent},
+      {path:'ClaimInsurance',component:ClaimInsuranceComponent},
+      {path:'ViewInsurance',component:ViewInsuranceComponent}
+      
     ]
   },
   {path:'',component:HomeComponent},
@@ -127,6 +132,12 @@ const routes: Routes = [
   {path:'BidderLogin',component:BidderloginComponent},
   {path:'ForgetPassword',component:ForgetpasswordComponent},
   {path:'ForgetPassword',component:ForgetpasswordComponent},
+
+  {path:'ForgetPassword1',component:Forgetpassword1Component},
+
+  {path:'ApplyInsurance',component:ApplyInsuranceComponent},
+  {path:'ClaimInsurance',component:ClaimInsuranceComponent},
+  {path:'ViewInsurance',component:ViewInsuranceComponent},
   {path:'FarmerRegistration',component:FarmerRegComponent},
   {path:'BidderRegistration',component:BidderRegComponent}
 

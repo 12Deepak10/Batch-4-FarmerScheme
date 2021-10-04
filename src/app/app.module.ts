@@ -5,7 +5,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
+
+
 import { HomeComponent } from './home/home.component';
 import { FarmerDetailsComponent } from './farmer-details/farmer-details.component';
 import { BidderDetailsComponent } from './bidder-details/bidder-details.component';
@@ -28,6 +29,11 @@ import { BiddingApprovalComponent } from './bidding-approval/bidding-approval.co
 import { BidderhomeComponent } from './bidderhome/bidderhome.component';
 import { BidPlacingComponent } from './bid-placing/bid-placing.component';
 import { BidhistoryComponent } from './bidhistory/bidhistory.component';
+
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { Resetpassword1Component } from './resetpassword1/resetpassword1.component';
+import { Forgetpassword1Component } from './forgetpassword1/forgetpassword1.component';
+import { FarmersloginComponent } from './farmerslogin/farmerslogin.component';
 import { ApplyInsuranceComponent } from './apply-insurance/apply-insurance.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
@@ -39,6 +45,10 @@ import { SellCropComponent } from './sell-crop/sell-crop.component';
 import { FarmerhomeComponent } from './farmerhome/farmerhome.component';
 import { SoldHistoryComponent } from './sold-history/sold-history.component';
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
+import { AdminComponent } from './admin/admin.component';
+import { ViewClaimComponent } from './view-claim/view-claim.component';
+
+
 
 @NgModule({
   declarations: [
@@ -65,6 +75,12 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
       AdminloginComponent,
       ForgetpasswordComponent,
 
+      ResetpasswordComponent,
+      Resetpassword1Component,
+      Forgetpassword1Component,
+      FarmersloginComponent,
+    
+
       ApplyInsuranceComponent,
       ClaimInsuranceComponent,
       ViewInsuranceComponent,
@@ -75,6 +91,8 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
       FarmerhomeComponent,
       SoldHistoryComponent,
       InsuranceDashboardComponent,
+      ViewClaimComponent,
+ 
 
       
   ],
@@ -89,6 +107,8 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
     // MatDividerModule,
     // MatListModule,
     FormsModule,
+
+  
     ReactiveFormsModule,
     HttpClientModule,
     // MatFormFieldModule,
@@ -101,6 +121,10 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
   //   MatFormFieldModule,
   //   MatInputModule,
   //  BrowserAnimationsModule
+    MatFormFieldModule,
+    MatInputModule,
+   BrowserAnimationsModule
+
   ],
   
   providers: [],

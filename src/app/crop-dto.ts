@@ -8,5 +8,4 @@ export class cropdto{
 	quantity: Number;
 	baseprice: Number;
     status: boolean;
-    
 }

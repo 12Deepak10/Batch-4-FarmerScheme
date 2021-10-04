@@ -40,17 +40,90 @@
       margin-bottom: 20px;
     }
   }
-  .button {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgb(145, 92, 182);
-    padding: 15px 40px;
-    border-radius: 4px;
-    font-weight: normal;
-    text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
-  }
-  .glow-button:hover {
-    color: rgba(255, 255, 255, 1);
-    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
-  }
+
+
+  th{
+    background-color: chartreuse;
+    border: 2px solid #A3CB38;
+}
+tr:nth-child(even) 
+{
+    background-color: #C4E538;
+}
+td{
+    border: 2px solid black;
+    padding-bottom: 10px;
+}
+table{
+    margin-left: 200px ;
+    align-items: center;
+    border: 2px solid gray;
+    box-shadow: 2px solid greenyellow;
+    display: inline-block;
+    font-size: 17px;
+    
+}
+th{
+  padding: 5px;
+}
+.bid{
+  margin-left: 500px;
+  position: relative;
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding: 10px 40px;
+
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.login-box{
+   background-repeat: repeat-y;
+   background-color: rgb(214, 240, 181);
+   width:500px;
+   background-size: cover;
+   margin-left: 300px ;
+   color:rgb(15, 14, 14);
+   position:relative;
+   box-sizing:border-box;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   padding:30px;
+   }
+.alert-danger{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: red;
+}

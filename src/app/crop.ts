@@ -1,7 +1,7 @@
 
 export class Crop{
 	farmerId: Number;
-    //cropid: Number;
+    cropid: Number;
 	croptype: String;
 	cropName: String;
 	fertilizertype: String ;

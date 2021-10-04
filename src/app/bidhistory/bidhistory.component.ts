@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { HistoryDto } from '../history-dto';
 
 @Component({
   selector: 'app-bidhistory',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bidhistory.component.css']
 })
 export class BidhistoryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  crop:HistoryDto[];
+  crops:HistoryDto[];
+  constructor(private adminService:AdminService) { }
+  b_id:Number;
+  ngOnInit(){
+    this.b_id = Number(sessionStorage.getItem("bidderId"))
+    this.adminService.history().subscribe(data =>
+      {
+            this.crop = data;
+            // console.log(this.crop);
+            this.crops = this.crop.filter(
+              x=> x.bidder.bidderId == this.b_id
+            );
+            console.log(this.b_id);
+            // console.log(this.crops);
+      })
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Claim } from '../claim';
+import { FarmerService } from '../farmer.service';
+import { InsuranceDto } from '../insurance-dto';
 
 @Component({
   selector: 'app-view-insurance',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewInsuranceComponent implements OnInit {
 
-  constructor() { }
+  insurance:InsuranceDto[];
+  claim:Claim[];
+  constructor(private farmerService:FarmerService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.farmerService.getInsurance().subscribe(data=>
+      {
+        console.log(data);
+        this.insurance = data;
+      })
+      
   }
 
 }

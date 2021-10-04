@@ -1,3 +1,4 @@
+import { Bidder } from "./Bidder";
 import { Farmer } from "./farmer";
 
 export class MarketDto {
@@ -9,4 +10,5 @@ export class MarketDto {
         baseprice: Number;
         status: boolean;
         farmer:Farmer;
+        bidder:Bidder;
 }

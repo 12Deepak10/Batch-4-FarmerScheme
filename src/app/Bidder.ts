@@ -9,5 +9,4 @@ export class Bidder{
 	balance:number;
 	aadharNo:number;
 	traderLicenseNo:number;
-	
 }

@@ -11,23 +11,19 @@ body{
     
 
 }
-
-.error{
-    color: red;
-}
-.insur-box{
+.login-box{
    /* background-image:url("src/assets/adminbackground.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
     */
     padding: 2%;
     background-color: rgb(214, 240, 181);
-    /* width:350px;
-    height:620px; */
+    width:400px;
+    height:700px;
     
     color:rgb(15, 14, 14);
-    top:50%;
-    left:50%;
+    top:60%;
+    left:55%;
     position:absolute;
     transform:translate(-50%,-50%);
     box-sizing:border-box;
